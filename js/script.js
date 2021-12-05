@@ -9,7 +9,7 @@ const bindEmul = function (func, obj, ...rest) {
   };
 };
 
-function hello(phone, email) {
+function personInfo(phone, email) {
   console.log(`First Name: ${this.name}`);
   console.log(`Last Name: ${this.lastName}`);
   console.log(`Age: ${this.age}`);
@@ -24,9 +24,21 @@ const yurii = {
   age: 25,
 };
 
-bindEmul(hello, yurii, '380-99-999-99-99', 'example@mail.com')();
-bindEmul(hello, yurii, '380-99-999-99-99')('example@gmail.com');
-bindEmul(hello, yurii)('380-99-999-99-99', 'example@gmail.com');
+const ivan = {
+  name: 'Ivan',
+  lastName: 'Ivanov',
+  age: 20,
+};
 
-const hiYurii = bindEmul(hello, yurii, '380-99-999-99-99', 'example@mail.com');
-hiYurii();
+const elon = {
+  name: 'Elon',
+  lastName: 'Musk',
+  age: 50,
+};
+
+bindEmul(personInfo, yurii, '380-99-999-99-99', 'example@mail.com')();
+bindEmul(personInfo, ivan, '380-88-888-88-88')('example@vanya.com');
+bindEmul(personInfo, elon)('380-12-345-67-89', 'example@musk.com');
+
+const yuriiInfo = bindEmul(personInfo, yurii, '380-99-999-99-99', 'example@mail.com');
+yuriiInfo();
