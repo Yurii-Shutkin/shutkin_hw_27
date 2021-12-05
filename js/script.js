@@ -10,11 +10,12 @@ const bindEmul = function (func, obj, ...rest) {
 };
 
 function hello(phone, email) {
-  console.log(`First Name: ${this.name},
-               Last Name: ${this.lastName}, 
-               Age: ${this.age},
-               Tel: ${phone},
-               E-mail: ${email}`);
+  console.log(`First Name: ${this.name}`);
+  console.log(`Last Name: ${this.lastName}`);
+  console.log(`Age: ${this.age}`);
+  console.log(`Tel: ${phone}`);
+  console.log(`E-mail: ${email}`);
+  console.log('');
 }
 
 const yurii = {
